@@ -1,0 +1,542 @@
+
+
+/* ============================================================
+   1. GLOBAL STYLES & COLOR PALETTE
+   ============================================================ */
+/* Putih: #FFFFFF
+   Beige: #F5F5DC (atau #F2E9E1)
+   Sage Green: #8A9A5B (atau #9CAF88)
+   Charcoal (Text): #4A4A4A
+*/
+
+body {
+    font-family: 'Inter', 'Poppins', 'Segoe UI', Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #FDFBF9; /* Warm White */
+    color: #4A4A4A;
+}
+
+/* --- Header --- */
+.header-banner {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid #9CAF88; 
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: #F2E9E1;
+    border-bottom: 1px solid #E5D3C5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    color: #6B705C;
+    padding: 20px 25px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #4A4A4A;
+    background-color: #E5D3C5;
+    font-weight: bold;
+}
+
+/* --- Global Layout --- */
+.main-wrapper {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ============================================================
+   2. HOME PAGE (INDEX.HTML) SPECIFIC STYLES
+   ============================================================ */
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #6B705C;
+    margin-bottom: 20px;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: #888;
+}
+
+.intro-grid {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+/* --- THE IMAGE FIX YOU ASKED FOR --- */
+.image-content {
+    text-align: center;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.featured-img {
+    width: 100%;
+    max-width: 650px; /* This prevents it from being "besar gila" */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px; /* Centers the image */
+    border-radius: 12px;
+    border: 8px solid #FFFFFF; /* Changed to White as requested for a clean look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: 0.4s;
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 8px;
+    text-align: center;
+    display: block;
+    font-style: italic;
+}
+/* ---------------------------------- */
+
+.btn-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #9CAF88;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #6B705C;
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+}
+
+/* ============================================================
+   3. ABOUT PAGE (ABOUT.HTML) SPECIFIC STYLES
+   ============================================================ */
+
+/* --- Badge & Section Titles --- */
+.badge {
+    background-color: #9CAF88;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    text-align: center;
+    color: #6B705C;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+/* --- Stats Grid (3 Boxes for Residents, Caregivers, Expenses) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.stat-card {
+    background: #FFFFFF;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-bottom: 5px solid #9CAF88; 
+    transition: 0.3s ease;
+}
+
+.stat-card:hover { transform: translateY(-10px); }
+
+.stat-card i { font-size: 2.5rem; color: #9CAF88; margin-bottom: 15px; }
+
+.stat-card h2 { font-size: 2.5rem; color: #4A4A4A; margin: 10px 0; }
+
+.stat-card p { font-weight: bold; color: #888; text-transform: uppercase; font-size: 0.9rem; }
+
+/* --- Features Grid (Image with Text Overlays) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.feature-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 450px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.feature-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(74, 74, 92, 0.95)); 
+    color: white;
+    padding: 30px 20px;
+}
+
+.feature-overlay h3 { color: #F5F5DC; margin-bottom: 10px; font-size: 1.4rem; }
+
+.feature-overlay p { font-size: 0.9rem; line-height: 1.5; opacity: 0.9; }
+
+.feature-item:hover img { transform: scale(1.1); }
+
+/* --- Vision & Mission Boxes --- */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.box-card {
+    background: #F2E9E1;
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 10px solid #9CAF88;
+}
+
+.box-card h3 { color: #6B705C; margin-bottom: 15px; }
+
+/* --- Organizational Chart Nodes --- */
+.org-chart { text-align: center; margin-top: 40px; }
+
+.chart-row { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+
+.chart-node {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #E5D3C5;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.chart-node strong { display: block; color: #6B705C; }
+
+
+/* ============================================================
+   6. ACTIVITIES PAGE (ACTIVITIES.HTML) - THUMBNAIL GALLERY
+   ============================================================ */
+
+.activity-group {
+    margin: 40px 0;
+}
+
+.activity-group h2 {
+    color: #6B705C; 
+    border-bottom: 2px solid #F2E9E1; 
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.thumbnail-gallery a {
+    flex: 1 1 180px; 
+    max-width: 200px;
+    text-decoration: none; 
+}
+
+.thumb {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #F2E9E1; 
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumb:hover {
+    transform: scale(1.05);
+    border-color: #9CAF88; 
+    box-shadow: 0 5px 15px rgba(156, 175, 136, 0.3);
+}
+
+/* ===========================
+   DONATION SECTION
+=========================== */
+.donation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+    justify-content: center;
+}
+
+.bank-info, .qr-section {
+    flex: 1 1 400px;
+    background-color: #e0fbfc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.bank-info h2, .qr-section h2 {
+    color: #005f73;
+    margin-bottom: 15px;
+}
+
+.bank-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+.qr-container {
+    text-align: center;
+}
+
+.qr-image {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.payment-icon {
+  width: 70px;  
+  height: auto; 
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.payment-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Container to align cards horizontally */
+.contact-grid-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+/* Individual Card Styling */
+.info-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    flex: 1;
+    min-width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #f1f1f1;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px); 
+}
+
+.center-card {
+    text-align: center;
+}
+
+.info-card h3 {
+    color: #005f73;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0fbfc;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Social Media Icon Groups */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.icon-group {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: scale(1.15); 
+}
+
+/* ===========================
+   IN-KIND DONATIONS SECTION
+=========================== */
+.inkind-section {
+    background-color: #f0f8ff; 
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.inkind-section h2 {
+    color: #005f73;
+    margin-bottom: 10px;
+}
+
+.items-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.item-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* ===========================
+    GOOGLE MAPS SECTION
+=========================== */
+.map-section {
+    max-width: 1100px; 
+    margin: 40px auto; 
+    padding: 20px;
+    text-align: center;
+}
+
+.map-container {
+    border-radius: 15px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.map-section iframe {
+    display: block; 
+}
+
+/* ============================================================
+   4. FOOTER (COMMON)
+   ============================================================ */
+footer {
+    background-color: #F2E9E1; 
+    padding: 60px 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.disclaimer-area {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 0.85rem;
+    color: #6B705C; 
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.5; 
+}
+
+.footer-info {
+    font-size: 0.75rem;
+    color: #9CAF88; 
+    line-height: 1.8;
+}
+
+/* ============================================================
+   5. RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.2rem; }
+    .intro-grid, .stats-grid, .mission-vision-grid { grid-template-columns: 1fr; }
+    .feature-item { height: 350px; }
+    
+    .disclaimer-area {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .featured-img {
+        max-width: 100%;
+        border-width: 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
